@@ -27,14 +27,14 @@ export default {
         items: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
       },
       {
-        slug: 'trendign',
+        slug: 'trending',
         title: 'Recomendados para Você',
-        items: await basicFetch(`/trendign/all/week?language=pt-BR&api_key=${API_KEY}`)
+        items: await basicFetch(`/trending/all/week?language=pt-BR&api_key=${API_KEY}`)
       },
       {
         slug: 'toprated',
         title: 'Em Alta',
-        items: await basicFetch(`/toprated/top_rated?language=pt-BR&api_key=${API_KEY}`)
+        items: await basicFetch(`/movie/top_rated?language=pt-BR&api_key=${API_KEY}`)
       },
       {
         slug: 'action',

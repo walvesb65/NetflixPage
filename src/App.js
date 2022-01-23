@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Tmdb from './Tmdb';
 import MovieRows from './components/MovieRows';
 
-export default () => {
+const App = () => {
 
   const [movieList, setMovieList] = useState([]);
 
@@ -16,12 +16,13 @@ export default () => {
   }, [])
 
   return (
-    <div className='page'>
+    <div className='pageHomeMovies'>
       <section className='lists'>
-        {movieList.map((item, key) => (
-          <div>
+        {movieList && movieList.map((item, key) => (
+          <div
+          key={`${item.slug}-${key}`}
+          >
             <MovieRows
-              key={key}
               title={item.title}
               items={item.items}
             />
@@ -31,3 +32,5 @@ export default () => {
     </div>
   );
 }
+
+export default App;
